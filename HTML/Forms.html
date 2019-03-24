@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Forms</title>
+	<head>
+	<body>
+	<center>
+	<!-- 
+	When GET is used, the submitted form data will be visible in the page address field.
+	Notes on GET:
+		Appends form-data into the URL in name/value pairs
+		The length of a URL is limited (about 3000 characters)
+		Never use GET to send sensitive data! (will be visible in the URL)
+		Useful for form submissions where a user wants to bookmark the result
+		GET is better for non-secure data, like query strings in Google
+
+	Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field.
+	Notes on POST:
+		POST has no size limitations, and can be used to send large amounts of data.
+		Form submissions with POST cannot be bookmarked
+	--> 
+		<form action="ismap and usemap.html" target="_blank" method="GET">
+			<fieldset>
+				<legend> New User Registration </legend>
+			First Name	<input type="text" size="25" maxlength="20" placeholder="First Name" name="fname"><br />
+			Last Name	<input type="text" size="25" maxlength="20" placeholder="Last Name" name="lname"><br />
+			Password	<input type="password" size="25" maxlength="20" name="pwd"><br />
+			Feedback	<textarea rows="5" cols="50" placeholder="Feedback"></textarea><br />
+			Interests
+						<input type="checkbox" name="cricket" value="on" checked>Cricket<br />
+						<input type="checkbox" name="football" value="on" >Football<br />
+						<input type="checkbox" name="tennis" value="on" >Tennis<br />
+			Sex			<input type="radio" name="sex">Male
+						<input type="radio" name="sex">Female <br />
+			
+			Favorite Sportsperson
+						<select name="dropdown" size="2">	<!-- Use the multiple attribute to allow the user to select more than one value, size=1 for dropdown -->
+							<option value="rf">Roger Federer</option>
+							<option value="eh">Eden Hazard</option>
+							<option value="st" selected>Sachin Tendulkar</option>
+							<option value="lj">Lebron James</option>
+							<option value="er">Efren Reyes</option>
+						</select><br />
+			Profile Picture
+						<input type="file" name="profile" accept="image/*"><br />
+						<input type="submit" value="Create User" name="submit"><br />
+						<input type="button" value="Refresh" name="refresh" onClick="window.location.reload()"><br />
+						<input type="image" src="https://icon.cat/img/icon_loop.png" name="btnImage" onClick="alert('You just clicked a picture button')"> <br />
+			<!-- 
+			The <datalist> element specifies a list of pre-defined options for an <input> element. Users will see a drop-down list of the pre-defined options as they input data. The list attribute of the <input> element, must refer to the id attribute of the <datalist> element -->
+						<input list="browsers" name="browser">
+							<datalist id="browsers">
+							<option value="Internet Explorer">
+							<option value="Firefox">
+							<option value="Chrome">
+							<option value="Opera">
+							<option value="Safari">
+							</datalist>
+						<input type="submit">
+			</fieldset>
+		</form>
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+			0<input type="range"  id="a" name="a" value="50">100 + <input type="number" id="b" name="b" value="50"> =
+			<output name="x" for="a b"></output>
+			<br><br>
+			<input type="submit">
+			</form>
+		<br /><br />
+		<form action="mailto:someemail@gmail.com">
+			<fieldset>
+			<legend> Send some Message to us </legend>
+			Contact Us
+						<input type="text" size="25" maxlength="20" value="Name" name="name"><br />
+						<input type="email" maxlength="50" value="Email" name="email"><br />
+						<textarea rows="5" cols="50">Message</textarea><br />
+						<input type="submit" value="Send Message">
+						<input type="reset" value="Reset">
+			</fieldset>
+		</form>
+	</center>
+	</body>
+</html>
