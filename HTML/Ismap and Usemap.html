@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Ismap and Usemap</title>
+	<head>
+	<body>
+	<p> 1st image uses ismap for referencing and getting the coordinates of the borders of image. Visible in IE and not in Chrome.
+	2nd image uses usemap to map the regions in the image to different links.
+	</p>
+	</body>
+	<a href="#">
+	<img src="https://www.hindustantimes.com/rf/image_size_640x362/HT/p1/2015/06/01/Incoming/Pictures/1353552_Wallpaper2.jpg"
+	width="600" height="400" ismap>
+	</a>
+	<img src="https://www.hindustantimes.com/rf/image_size_640x362/HT/p1/2015/06/01/Incoming/Pictures/1353552_Wallpaper2.jpg"
+	width="600" height="400" usemap="#legends">
+	<map name="legends">
+		<area shape="rect" coords="0,0,275,400" href="https://en.wikipedia.org/wiki/Sourav_Ganguly" target="_blank"></area>
+		<area shape="rect" coords="276,0,600,200" href="https://en.wikipedia.org/wiki/Sachin_Tendulkar" target="new"></area>
+		<area shape="rect" coords="276,0,600,400" href="https://en.wikipedia.org/wiki/V._V._S._Laxman" target="_blank"></area>
+	</map>
+	<font size="10">
+		<br>
+		<center>
+			<a href="mailto:someemail@gmail.com">Send Email</a>
+		</center>
+	</font>
+</html>
