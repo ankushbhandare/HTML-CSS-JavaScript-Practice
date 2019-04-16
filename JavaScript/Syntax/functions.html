@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+    <body>
+        <button onclick="clicked()">click me</button>
+        <h4 id="id1"></h4>
+        <button onclick="paramFunction('Ankush',26,'Long Beach')">Parameter Click</button>
+        <h4 id="id2"></h4>
+        <input id="farenheit" value="">
+        <button onclick="convertToC()">Convert to C</button>
+        <h4 id="id3"></h4>
+        <p>Enter power value for 2</p>
+        <input id="power" value="">
+        <button onclick="val=raisePower(power.value)">Raise Power</button>
+        <h4 id="id4"></h4>
+        <button onclick="val=displayTime()">Display Time</button>
+        <h4 id="id5"></h4> 
+        <!-- Using withour script tag or function-->
+        <button onclick="document.getElementById('id6').innerHTML=Date()">Click for Date</button>
+        <h4 id="id6"></h4>
+        <!-- Change the text of button using this operator -->
+        <button onclick="this.innerHTML=Date()">Click for Date</button>    
+        <h4 id="id7"></h4>
+        <h4 id="id8"></h4>
+        <h4 id="id9"></h4>         
+    </body>
+    <script>
+        //Normal Function
+        function clicked()
+        {
+            document.getElementById("id1").innerHTML="Button Clicked";
+        }
+
+        //Function accepting parameters
+        function paramFunction(name,age,location)
+        {
+            document.getElementById("id2").innerHTML = name +" is " + age + 
+            " years old and lives in " + location;
+        }
+        //Convert F to C from input
+        function convertToC(){
+            var x = farenheit.value;
+            x= (5/9)*(x-32);
+            document.getElementById("id3").innerHTML = "In Degree Celsius: " + x.toFixed(2);
+        }
+
+        //using return statement from functions
+        function calculate(power){
+            return 2 ** power;
+        }
+
+        function raisePower(power)
+        {
+            var x= calculate(power);
+            document.getElementById("id4").innerHTML = x;
+        }
+
+        //Use inbuilt functions and events 
+        function displayTime()
+        {
+            document.getElementById("id5").innerHTML = Date();
+        }
+    </script>    
+</html>

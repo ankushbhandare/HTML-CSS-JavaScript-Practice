@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+    <body>
+        <!-- HTML Comment -->
+        <h4 id="id1"></h4>
+        <h4 id="id2"></h4>
+        <h4 id="id3"></h4>
+        <h4 id="id4"></h4>
+        <button id="btn" onclick="myFunction()">Click Here</button>
+        <h4 id="id5"></h4> 
+        <h4 id="id6"></h4>    
+    </body>
+    <script>
+    var x=5;
+    document.getElementById("id1").innerHTML=x;
+    x=10;
+    document.getElementById("id2").innerHTML=x;
+    var fName="Ankush";
+    var lName="Bhandare";
+    //use <br> for printing in next line
+    document.getElementById("id3").innerHTML="Hello <br>"+fName+"<br>"+lName;
+    var z;
+    document.getElementById("id4").innerHTML=z;
+    //Putting a number in quotes will make the variable of string type
+    var y = "1"+2*3; //16
+    var z = 7+1+"ankush";  //8ankush
+    document.getElementById("id6").innerHTML=y;    
+    function myFunction()
+    {
+        var temp="Long Beach";
+        //variable temp doesn't lose initial value 
+        var temp;
+        document.getElementById("id5").innerHTML=temp;
+    }
+    </script>    
+</html>

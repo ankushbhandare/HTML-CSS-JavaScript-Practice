@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+    <body>
+        <p>Number</p>
+        <h4 id="id1"></h4>
+        <p>String</p>
+        <h4 id="id2"></h4>
+        <p>Array</p>
+        <h4 id="id3"></h4>
+        <p>Object</p>
+        <h4 id="id4"></h4>
+        <p>typeof</p>
+        <h4 id="id5"></h4>
+        <p>NaN</p> 
+        <h4 id="id6"></h4>
+        <p>undefined</p>    
+        <h4 id="id7"></h4>
+        <p>null is object</p>
+        <h4 id="id8"></h4>
+        <h4 id="id9"></h4>     
+
+    </body>
+    <script>
+    //Numbers
+    var x=50.00;
+    var y=22/7;
+    document.getElementById("id1").innerHTML=x+"<br>"+y.toFixed(2);
+    //String
+    x="Ankush";
+    y="Bhandare";
+    document.getElementById("id2").innerHTML = x+" "+y;
+    //Array
+    var country = ["India", "Australia", "USA"];
+    document.getElementById("id3").innerHTML = country[0] + "<br>" + country[1] + "<br>" + country[2];
+    //Object
+    var person = {
+        fName : "Ankush",
+        age : 26,
+        location : "Long Beach"
+    };
+    document.getElementById("id4").innerHTML = person.fName + " is " + person.age + 
+    " years old and lives in " + person.location;
+
+    var val = 10;
+    document.getElementById("id5").innerHTML =
+    typeof "" + "<br>" +
+    typeof "Ankush" + "<br>" +
+    typeof "100" + "<br>" +
+    typeof 100 + "<br>" +    
+    typeof 4.598 + "<br>" +
+    typeof val + "<br>" +
+    typeof (22/8) + "<br>";
+
+    val = 10 + NaN;
+    document.getElementById("id6").innerHTML = 
+    typeof 22/8 + "<br>" +
+    val + "<br>";
+    
+    val = 10 + undefined;
+    document.getElementById("id7").innerHTML = typeof animal + "<br>" +
+    val + "<br>";
+    
+    val = 10 + null;
+    document.getElementById("id8").innerHTML = typeof null + "<br>" +
+    val + "<br>";
+    </script>    
+</html>

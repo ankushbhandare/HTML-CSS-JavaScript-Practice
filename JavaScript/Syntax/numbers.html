@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+    <body>
+        <h4 id="id1"></h4>
+        <h4 id="id2"></h4>
+        <h4 id="id3"></h4>       
+    </body>
+    <script>
+    var x=16;
+    //toString() coverts the base of the number
+    document.getElementById("id1").innerHTML = 
+    x.toString(10) + "<br>" +
+    x.toString(2) + "<br>" +
+    x.toString(8) + "<br>" +
+    x.toString(16);
+
+    x=19.1245;
+    //toExponential() is used to represent number in exponential form (e). 
+    // Bigger the number in parameter() higher the accuracy
+    document.getElementById("id2").innerHTML = 
+    x.toExponential(0) + "<br>" +
+    x.toExponential(1) + "<br>" +
+    x.toExponential(2) + "<br>" +
+    x.toExponential(4);
+
+    x=22/7;
+    //toFixed() is used to limit the trailing decimal digits
+    document.getElementById("id3").innerHTML = 
+    x.toFixed(0) + "<br>" +
+    x.toFixed(2) + "<br>" +
+    x.toFixed(5) + "<br>" +
+    x.toFixed(10);
+    </script>    
+</html>
