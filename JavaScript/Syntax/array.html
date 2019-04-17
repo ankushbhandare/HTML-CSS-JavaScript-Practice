@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators</title>
+    </head>
+    <body>
+        <input id="input1" value = "">
+        <button onclick="myPush(input1.value)">Push</button>
+        <button onclick="myPop()">Pop</button>
+        <button onclick="myShift()">Shift</button>
+        <button onclick="myUnshift(input1.value)">Unshift</button>
+        <button onclick="mySpliceAdd()">Splice Add</button>
+        <button onclick="mySpliceRemove()">Splice Remove</button>
+        <h4 id="id1"></h4>  
+        <button onclick="myJoin()">Join</button>     
+        <h4 id="id2"></h4>
+        <button onclick="myConcat()">Concat</button>
+        <h4 id="id3"></h4>
+        <button onclick="myReverse()">Reverse</button>
+        <h4 id="id4"></h4>
+        <button onclick="mySortAsc()">Sort Ascending</button>
+        <h4 id="id5"></h4> 
+        <button onclick="mySortDesc()">Sort Descending</button>
+        <h4 id="id6"></h4> 
+        <button onclick="myPrint()">Print ForEach</button>           
+        <h4 id="id7"></h4>
+        <button onclick="myDouble()">Print Double Map</button>
+        <h4 id="id8"></h4>
+        <button onclick="myFilterValues()">Filter Values</button>
+        <h4 id="id9"></h4> 
+        <button onclick="mySum()">Find Reduce Sum</button>
+        <h4 id="id10"></h4>        
+    </body>
+    <script>
+        var arr = [];
+        
+        //Push is used to push an element at the end of array
+        function myPush(val)
+        {
+            arr.push(val);
+            document.getElementById("id1").innerHTML=arr;
+        }
+
+        //Pop is used to remove last element of the array
+        function myPop()
+        {
+            arr.pop();
+            document.getElementById("id1").innerHTML=arr;
+        }
+
+        //Shift is used to remove first element of the array and move all other elements to left
+        function myShift()
+        {
+            arr.shift();
+            document.getElementById("id1").innerHTML=arr;
+        }
+
+        //Shift is used to add element in the array at first place and move all other elements to right
+        function myUnshift(val)
+        {
+            arr.unshift(val);
+            document.getElementById("id1").innerHTML=arr;
+        }
+
+        //Use Splice to add, remove elements in between at desired position
+        //The first parameter (2) defines the position where new elements should be added (spliced in)
+        //The second parameter (0) defines how many elements should be removed
+        //The rest of the parameters ("8" , "7", "4" , "5") define the new elements to be added
+        function mySpliceAdd()
+        {
+            arr.splice(2,0,8,7,4,5);
+            document.getElementById("id1").innerHTML=arr;
+        }
+
+        //Use Splice to add, remove elements in between at desired position
+        //The first parameter (1) defines the position where new elements should be added (spliced in)
+        //The second parameter (3) defines how many elements should be removed
+        function mySpliceRemove()
+        {
+            arr.splice(1,3);
+            document.getElementById("id1").innerHTML=arr;
+        }        
+
+        //Join is ised to convert the array to string by joining elements
+        function myJoin()
+        {            
+            document.getElementById("id2").innerHTML=arr.join('+');
+        }
+
+        //concat is used to merge 2 arrays
+        function myConcat()
+        {
+            arr2=["Boy","Girl","Man","Woman"];
+            document.getElementById("id3").innerHTML=arr.concat(arr2);
+        }
+
+        //reverse is used to reverse an array
+        function myReverse()
+        {
+            document.getElementById("id4").innerHTML=arr.reverse();
+        }
+
+        //sort is used to sort an array (a,b) are 2 local vars and a-b returns 
+        // < 0 : a if smaller
+        // 0 : both are equal
+        // >0 : b is smaller
+        function mySortAsc()
+        {
+            document.getElementById("id5").innerHTML=arr.sort((a,b)=> a-b);
+        }
+
+        //sort is used to sort an array (a,b) are 2 local vars and b-a returns 
+        // < 0 : b if smaller
+        // 0 : both are equal
+        // >0 : a is smaller
+        function mySortDesc()
+        {
+            document.getElementById("id6").innerHTML=arr.sort(function(a,b){return b-a});
+        }
+
+        var txt="";
+        //forEach is used to loop the array
+        function myPrint()
+        {
+            arr.forEach(printForEach)
+            document.getElementById("id7").innerHTML=txt;
+        }
+        //3 parameters passed 1.The item value 2.The item index 3.The array itself
+        //When a callback function uses only value parameter, index and array parameters can be omitted
+        function printForEach(value,index,array)
+        {
+            txt=txt + value + "<br>";
+        }
+
+        //The map() method creates a new array by performing a function on each array element.
+        //The map() method does not execute the function for array elements without values.
+        //The map() method does not change the original array.
+
+        function myDouble()
+        {
+            arr2 = arr.map(myMap)
+            document.getElementById("id8").innerHTML=arr2;
+        }
+        //3 parameters passed 1.The item value 2.The item index 3.The array itself
+        //When a callback function uses only value parameter, index and array parameters can be omitted
+        function myMap(value)
+        {
+            return value * 2;
+        }
+
+        //The filter() method creates a new array with array elements that passes a test.
+        function myFilterValues()
+        {
+            arr2 = arr.filter(myFilter)
+            document.getElementById("id9").innerHTML=arr2;
+        }
+        
+        function myFilter(value)
+        {
+            return value>10;
+        }
+
+        //The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+        //The reduce() method works from left-to-right in the array.
+        function mySum()
+        {
+            total = arr.reduce(myReduce);
+            document.getElementById("id10").innerHTML=total;
+        }
+        //Use Number(total) to convert string to Number value
+        function myReduce(total,value,index,array)
+        {
+            
+            return Number(total)+Number(value);
+        }
+
+    </script>    
+</html>
