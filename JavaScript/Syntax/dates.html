@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dates</title>
+    </head>
+    <body>
+        <h4 id="id1"></h4>
+        <h4 id="id2"></h4>
+        <h4 id="id3"></h4>       
+    </body>
+    <script>
+    var x=new Date();
+    //toString() coverts the base of the number
+    document.getElementById("id1").innerHTML = 
+    "Date(): " + x + "<br>" +
+    //Returns the day of the month (from 1-31)
+    "getDate(): " + x.getDate() + "<br>" +
+    //Returns the year
+    "getFullYear(): " + x.getFullYear() + "<br>" +
+    //Returns the day of the week (from 0-6)
+    "getDay(): " + x.getDay() + "<br>" +
+    //Returns the month (from 0-11)
+    "getMonth(): " + x.getMonth() + "<br>" +
+    //Returns the time difference between UTC time and local time, in minutes
+    "getTimeZoneOffset(): " + x.getTimezoneOffset() + "<br>" +
+    //Returns the hour (from 0-23)
+    "getHours(): " + x.getHours() + "<br>" +
+    //Returns the minutes (from 0-59)
+    "getMinutes(): " + x.getMinutes() + "<br>" +
+    //Returns the seconds (from 0-59)
+    "getSeconds(): " + x.getSeconds() + "<br>" +
+    //Returns the number of milliseconds since midnight Jan 1 1970, and a specified date
+    "getTime(): " + x.getTime();
+/*
+    x=19.1245;
+    //toExponential() is used to represent number in exponential form (e). 
+    // Bigger the number in parameter() higher the accuracy
+    document.getElementById("id2").innerHTML = 
+    x.toExponential(0) + "<br>" +
+    x.toExponential(1) + "<br>" +
+    x.toExponential(2) + "<br>" +
+    x.toExponential(4);
+
+    x=22/7;
+    //toFixed() is used to limit the trailing decimal digits
+    document.getElementById("id3").innerHTML = 
+    x.toFixed(0) + "<br>" +
+    x.toFixed(2) + "<br>" +
+    x.toFixed(5) + "<br>" +
+    x.toFixed(10); */
+    </script>    
+</html>
