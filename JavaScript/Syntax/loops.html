@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+    </head>
+    <body>
+        <p class="id1"></p>
+        <p class="id1"></p>
+        <p id="id2"></p>
+        <p id="id3"></p>
+        <p id="id4"></p>
+    </body>
+    <script>
+        var x="";
+        var className= document.getElementsByClassName("id1");
+        //for loop traditional
+        for(i=0;i<5;i++)
+        {
+            x = x+ " "+ i;            
+        }
+        className[0].innerHTML=x;
+
+        //for..in loop for arrays
+        x="";
+        y=[5,4,3,2,1,2,3,4,5];        
+        for(var item in y)
+        {
+            x= x+" "+y[item];    
+        }
+        className[1].innerHTML=x;
+
+        //while loop
+        x="";
+        i=0;
+        while(i<y.length)
+        {
+            x=x+" "+(y[i]);
+            i++;
+        }
+        document.getElementById("id2").innerHTML=x;
+
+        //do while loop
+        x="";
+        i=0;
+        do{
+            x=x+" "+(y[i]);
+            i++;
+        }while(i<y.length);
+        document.getElementById("id3").innerHTML=x;
+    </script>
+</html>
