@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+    </head>
+    <body>
+        <p id="id1"></p>
+        <input type="button" value="Click for Error" onclick="errorMessage()">
+        <p id="id2"></p>
+        <input type="button" value="Click for Error" onclick="errMessage()">
+        <p id="id3"></p>
+        <p id="id4"></p>
+    </body>
+    <script>
+        //simple try catch block
+        try{
+            elert("This is an error");
+        }
+        catch(err)
+        {
+            document.getElementById("id1").innerHTML = err;
+        }
+
+        //error handling for function with own message
+        var txt="";
+        function errorMessage()
+        {
+            try{
+                elert("This is an error");
+            }
+            catch(err){
+                var txt="There is an error on this page. Click cancel to go to Google";
+                if(!confirm(txt))
+                {
+                    document.location.href = "https://www.google.com";
+                }
+            }
+        }
+
+        //Working with error handler
+        //onerror fires when an error occurs
+        onerror=errorHandler;
+        var txt="";
+        function errorHandler(msg,url,line)
+        {
+            txt = "Error: " + msg + "\n" +
+                "URL: " + url + "\n" +
+                "At Line: " + line +"\n";
+            alert(txt);
+            return true;
+        }
+        function errMessage()
+        {
+            elert("Wrong Function name");
+        }
+
+        //Custom error messages using throw
+        var x="ten";
+        try{
+            if(isNaN(x))
+                throw "x is not a number";
+        }
+        catch(err)
+        {
+            document.getElementById("id4").innerHTML=err;
+        }
+    </script>
+</html>

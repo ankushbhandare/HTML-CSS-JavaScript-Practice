@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regex</title>
+    </head>
+    <body>
+        <p id="id1"></p>
+        <p id="id2"></p>
+        <p id="id3"></p>
+        <p id="id4"></p>
+        <p id="id5"></p>
+    </body>
+    <script>
+
+        //The search() method uses an expression to search for a match, and returns the position of the match.
+        //The replace() method returns a modified string where the pattern is replaced.
+        var input = "Hi, Google.com is the most visited website in the world. "+
+        "Several other Google services also figure in the top 100 most visited websites, "+
+        "including YouTube and Blogger. Google is the most valuable brand in the world as of 2017."
+        //Search() searches for a pattern in given string and return the index postion 
+        //of the first character of match
+        //MODIFIERS
+        //i - Perform case-insensitive matching
+        //g - Perform a global match (find all matches rather than stopping after the first match)
+        //m - Perform multiline matching
+
+        //using i modifier
+        var patt = /Google/i;
+        var index = input.search(patt);
+        var str = input.match(patt);
+        document.getElementById("id1").innerHTML =index + " " +str;
+        //using g modifier
+        index = input.search(/Google/g);
+        str = input.match(/Google/g);
+        document.getElementById("id2").innerHTML = index + " " + str;
+        //using m modifier (Only 1 new line in our case)
+        patt = /Google/m;
+        index = input.search(patt);
+        str = input.match(patt);
+        document.getElementById("id3").innerHTML = index + " " + str;
+
+        //replace() replaces one string with the other by matching the given pattern
+        document.getElementById("id4").innerHTML = input;
+        patt = /Google/g;
+        str = input.replace(patt, "Microsoft");
+        document.getElementById("id5").innerHTML = str;
+    </script>
+</html>
